@@ -1,0 +1,19 @@
+import React from 'react';
+
+const Alert = ({ type, msg, removeAlert, list }) => {
+
+  React.useEffect(() => {
+    let timeout = setTimeout(() => {
+      removeAlert();
+    }, 3000)
+    return () => clearTimeout(timeout);
+  }, [list]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  return <p
+    className={`w-full text-center text-sm rounded-lg capitalize ${type} ${msg ? 'bg-green-200' : 'bg-red-300'}`}
+    >
+    {msg}
+    </p>
+}
+
+export default Alert;
