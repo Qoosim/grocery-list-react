@@ -1,4 +1,4 @@
-# Grocery Bud
+# Grocery List
 
 > This is a react application used as a practicing project to become better in react and tailwindcss.
 > In the app, use can add groceries to the lists, edit, remove single grocery, and clear all the added groceries 
