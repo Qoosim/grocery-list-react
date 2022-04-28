@@ -9,7 +9,7 @@ const List = ({ items, removeItem, editItem }) => {
           const { id, title } = item;
           return (
             <article key={id} className="flex place-content justify-between py-2">
-              <p>{title}</p>
+              <p className="capitalize">{title}</p>
               <div className="flex text-xs">
                 <button
                   className="mr-2 text-green-600"
