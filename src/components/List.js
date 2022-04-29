@@ -3,7 +3,7 @@ import { FaTrash, FaEdit } from "react-icons/fa";
 
 const List = ({ items, removeItem, editItem }) => {
   return (
-    <div className="mx-8 my-4">
+    <div className="mx-2 my-4">
       {
         items.map((item) => {
           const { id, title } = item;
