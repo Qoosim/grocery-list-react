@@ -17,7 +17,8 @@ function App() {
   const [alert, setAlert] = React.useState({
     show: false,
     msg: '',
-    type: ''
+    type: '',
+    bg: ''
   });
 
   const handleSubmit = (e) => {
@@ -25,7 +26,7 @@ function App() {
 
     if (!name) {
       // Display alert msg
-      showAlert(true, 'please enter value', 'text-red-800');
+      showAlert(true, 'please enter value', 'text-red-800', 'bg-red-300');
     }
     else if(name && isEditing) {
       // Handle Editing
@@ -40,11 +41,11 @@ function App() {
       setName('');
       setEditID(null);
       setIsEditing(false);
-      showAlert(true,'item updated', 'text-green-600')
+      showAlert(true,'item updated', 'text-orange-600', 'bg-orange-300')
     }
     else {
       // Show alert
-      showAlert(true, 'an item was added', 'text-green-800');
+      showAlert(true, 'an item was added', 'text-green-800', 'bg-green-300');
       const newItem = {
         id: new Date().getTime().toString(),
         title: name
@@ -54,12 +55,12 @@ function App() {
     }
   }
 
-  const showAlert = (show = false, msg = '', type = '') => {
-    setAlert({ show, msg, type });
+  const showAlert = (show = false, msg = '', type = '', bg = '') => {
+    setAlert({ show, msg, type, bg });
   };
 
   const removeItem = (id) => {
-    showAlert(true, 'an item was removed', 'text-red-600');
+    showAlert(true, 'an item was removed', 'text-red-600', 'bg-red-300');
     let newLists = list.filter((item) => item.id !== id);
     setList(newLists);
   }
@@ -72,7 +73,7 @@ function App() {
   }
 
   const clearItems = () => {
-    showAlert(true, 'empty list', 'text-red-600');
+    showAlert(true, 'empty list', 'text-red-600', 'bg-red-300');
     setList([]);
   }
 
@@ -106,7 +107,7 @@ function App() {
           <div className="mx-8">
             <List items={list} removeItem={removeItem} editItem={editItem} />
             <button
-              className="block mx-auto text-red-500 capitalize"
+              className="block mx-auto text-white font-bold capitalize bg-red-500 rounded-lg px-2"
               onClick={clearItems}
             >
               clear items

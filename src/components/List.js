@@ -8,7 +8,10 @@ const List = ({ items, removeItem, editItem }) => {
         items.map((item) => {
           const { id, title } = item;
           return (
-            <article key={id} className="flex place-content justify-between py-2">
+            <article 
+              key={id}
+              className="flex place-content justify-between py-2 border-b-2"
+            >
               <p className="capitalize">{title}</p>
               <div className="flex text-xs">
                 <button
