@@ -98,7 +98,7 @@ function App() {
             type="submit"
             className="rounded-r-lg bg-blue-300 px-3 py-1 capitalize hover:bg-blue-400 hover:text-white outline-none"
           >
-            submit
+            {editID ? 'edit' : 'submit'}
           </button>
         </div>
       </form>
